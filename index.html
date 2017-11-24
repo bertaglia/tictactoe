@@ -1,41 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="Free Code Camp Tic Tac Toe Challenge">
-        <meta name="keywords" content="FCC, FreeCodeCamp, Tic Tac Toe">
-        <meta name="author" content="Carlos Bertaglia">
-        <meta name="robots" content="index, follow">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-        <link rel="shortcut icon" type="image/*" href="img/favicon.ico">
-        <link href="https://fonts.googleapis.com/css?family=Electrolize" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/style.css">
-        <title>FCC Tic Tac Toe</title>
 
-        <!-- The Open Graph protocol -->
-        <meta property="og:title" content="FCC Tic Tac Toe">
-        <meta property="og:description" content="Free Code Camp Tic Tac Toe Challenge">
-        <meta property="og:type" content="website">
-        <meta property="og:image" content="https://bertaglia.net/tictactoe/img/cover.png">
-        <meta property="og:site_name" content="bertaglia.net">
-        <meta property="og:url" content="https://bertaglia.net/tictactoe">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Free Code Camp Tic Tac Toe Challenge">
+    <meta name="keywords" content="FCC, FreeCodeCamp, Tic Tac Toe">
+    <meta name="author" content="Carlos Bertaglia">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/*" href="img/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Electrolize" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>FCC Tic Tac Toe</title>
 
-        <!-- twitter card -->
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:image" content="https://bertaglia.net/tictactoe/img/cover.png">
-        <meta name="twitter:site" content="https://bertaglia.net/tictactoe">
-        <meta name="twitter:creator" content="@carlosbertaglia">
-        <meta name="twitter:description" content="Free Code Camp Tic Tac Toe Challenge">
-        <meta name="twitter:title" content="FCC Tic Tac Toe">
+    <!-- The Open Graph protocol -->
+    <meta property="og:title" content="FCC Tic Tac Toe">
+    <meta property="og:description" content="Free Code Camp Tic Tac Toe Challenge">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://bertaglia.net/tictactoe/img/cover.png">
+    <meta property="og:site_name" content="bertaglia.net">
+    <meta property="og:url" content="https://bertaglia.net/tictactoe">
 
-        <!-- TODO LIST
+    <!-- twitter card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://bertaglia.net/tictactoe/img/cover.png">
+    <meta name="twitter:site" content="https://bertaglia.net/tictactoe">
+    <meta name="twitter:creator" content="@carlosbertaglia">
+    <meta name="twitter:description" content="Free Code Camp Tic Tac Toe Challenge">
+    <meta name="twitter:title" content="FCC Tic Tac Toe">
 
-        -->
-    </head>
-    <body>
+    <!-- TODO LIST-->
+    <!-- 
+        *- start keeping scores
+        *-
+        *-
+        *-
+    -->
+</head>
 
-    </body>
+<body>
+    <div class="choose">
+        <div>
+            <a href="#" class="myButton" onClick="chooseSymbol('X')">X</a>
+            OR
+            <a href="#" class="myButton" onClick="chooseSymbol('O')">O</a>
+        </div>
+    </div>
+
+    <div class="game">
+        <table>
+            <tr>
+                <td class="cell" id="0"></td>
+                <td class="cell" id="1"></td>
+                <td class="cell" id="2"></td>
+            </tr>
+            <tr>
+                <td class="cell" id="3"></td>
+                <td class="cell" id="4"></td>
+                <td class="cell" id="5"></td>
+            </tr>
+            <tr>
+                <td class="cell" id="6"></td>
+                <td class="cell" id="7"></td>
+                <td class="cell" id="8"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="endgame">
+        <div class="text"></div>
+    </div>
+    <div class="buttonReplay">
+        <a href="#" onClick="startGame()" class="replay">Replay</a>
+    </div>
+
+    <!-- footer -->
+    <span class="footer">
+        Made by
+        <a target="_blank" href="https://github.com/bertaglia">Carlos Bertaglia</a>
+        <br> Fork or suggest edits on
+        <a target="_blank" href="https://github.com/bertaglia/tictactoe">GitHub</a>
+        <br> Credits: FCC Youtube
+        <a target="_blank" href="https://www.youtube.com/watch?v=P2TcQ3h0ipQ">video by Beau Carnes</a> and 
+        <a target="_blank" href="https://medium.freecodecamp.org/how-to-make-your-tic-tac-toe-game-unbeatable-by-using-the-minimax-algorithm-9d690bad4b37">the minimax Algorithm</a>
+        <br>
+        <a target="_blank" href="https://twitter.com/carlosbertaglia"><i class="fa fa-twitter fa-2x grow" aria-hidden="true"></i></a>
+        <a target="_blank" href="https://github.com/bertaglia"><i class="fa fa-github fa-2x grow" aria-hidden="true"></i></a>
+        <a target="_blank" href="https://www.linkedin.com/in/carlosbertaglia/"><i class="fa fa-linkedin fa-2x grow" aria-hidden="true"></i></a>
+        <a target="_blank" href="https://www.facebook.com/bertaglia.carlos"><i class="fa fa-facebook fa-2x grow" aria-hidden="true"></i></a>
+        <a target="_blank" href="https://plus.google.com/114219700747009943135"><i class="fa fa-google-plus fa-2x grow" aria-hidden="true"></i></a>
+        <a target="_blank" href="https://www.instagram.com/carlos_bertaglia/"><i class="fa fa-instagram fa-2x grow" aria-hidden="true"></i></a>
+        <a target="_blank" href="https://www.freecodecamp.org/bertaglia"><i class="fa fa-free-code-camp fa-2x grow" aria-hidden="true"></i></a>
+        <a target="_blank" href="mailto:bertaglia.carlos@gmail.com?subject=FCC%20TicTacToe%20Project"><i class="fa fa-envelope fa-2x grow" aria-hidden="true"></i></a>
+    </span>
+    <!-- footer -->
+
+    <script src="js/script.js"></script>
+</body>
+
 </html>
